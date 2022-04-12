@@ -1,0 +1,3 @@
+# store_test_vst requirements
+###############################
+vstutils[prod]==5.0.0b117

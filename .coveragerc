@@ -1,0 +1,18 @@
+[run]
+source = store_test_vst
+parallel = True
+concurrency =
+    thread
+    multiprocessing
+omit =
+    *.tox/*
+    *setup.py
+    test.py
+    */store_test_vst/__main__.py
+    */store_test_vst/wsgi.py
+
+[report]
+show_missing = True
+exclude_lines =
+    pragma: no cover
+    nocv

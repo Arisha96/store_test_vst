@@ -1,0 +1,4 @@
+[flake8]
+ignore = E221,E222,E121,E123,E126,E226,E24,E704,E116,E731,E722,E741,W504,B001,B008,C812,C815
+exclude = ./store_test_vst/*/migrations/*,./store_test_vst/settings*.py,.tox/*,store_test_vst/__main__.py,
+max-line-length=120

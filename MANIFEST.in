@@ -1,0 +1,6 @@
+include README.rst LICENSE
+include setup.cfg
+include requirements.txt
+recursive-include store_test_vst/*/templates *
+recursive-include store_test_vst/templates *
+recursive-include store_test_vst/static *
