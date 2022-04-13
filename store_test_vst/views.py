@@ -1,17 +1,21 @@
-from vstutils.api import decorators as deco
-from rest_framework.permissions import AllowAny
-from .serializers import ItemSerializer
+from vstutils.api.decorators import nested_view
+from vstutils.api.permissions import SuperUserPermission
+
+from .permissions import ItemsHandlingPermission
+from .serializers import ItemSerializer, PropertyCustomSerializer
 from .models import Item, Property
 
 
 class PropertyViewSet(Property.generated_view):
-    permission_classes = (AllowAny,)
+    serializer_class_one = PropertyCustomSerializer
+    permission_classes = (ItemsHandlingPermission,)
 
 
-@deco.nested_view('properties',
-                  manager_name='properties',
-                  methods=['post', 'get', 'put', 'patch', 'delete'],
-                  view=PropertyViewSet)
+@nested_view('properties',
+             manager_name='properties',
+             allow_append=True,
+             methods=['post', 'get', 'put', 'patch', 'delete'],
+             view=PropertyViewSet)
 class ItemViewSet(Item.generated_view):
-    permission_classes = (AllowAny,)
     serializer_class = ItemSerializer
+    permission_classes = (ItemsHandlingPermission,)

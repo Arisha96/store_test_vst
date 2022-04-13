@@ -26,14 +26,5 @@ class Item(BModel):
                                  default='RUB')
     description = models.CharField(max_length=512)
     properties = models.ManyToManyField(Property)
-    image = models.ImageField()
+    image = models.ImageField(default='./blank.jpg')
     _translate_model = 'Item'
-
-    class Meta:
-        # create nested views from models
-        _nested = {
-            'properties': {
-                'allow_append': True,
-                'model': Property
-            }
-        }

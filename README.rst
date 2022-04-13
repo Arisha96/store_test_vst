@@ -2,26 +2,10 @@ STORE_TEST_VST
 ==============
 
 
-GUI
+BACKEND
 ---
 
-* Run: `python -m store_test_vst web`
-* Stop: `python -m store_test_vst web stop=/tmp/store_test_vst_web.pid`
-
-Before first run, you should run:
-
-* `python -m store_test_vst migrate`
-* `python -m store_test_vst createsuperuser`
+* Run: `python3 -m store_test_vst web`
 
 
-Tests
------
 
-Just run `tox` in project directory.
-Read more: `https://tox.readthedocs.io/en/latest/`_.
-
-
-Build
------
-
-* Run ``tox -e build``
